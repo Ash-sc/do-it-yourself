@@ -1,0 +1,32 @@
+<!doctype HTML>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>Vue-like Demo</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="word">
+            <p>{{ word }}</p>
+            <button v-on:click="sayHi">点我</button>
+        </div>
+    </body>
+    <script src="./observer.js"></script>
+    <script src="./watcher.js"></script>
+    <script src="./compile.js"></script>
+    <script src="./vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                word: 'Hello World!'
+            },
+            methods: {
+                sayHi: function() {
+                    this.word = 'Hi, everybody!'
+                }
+            }
+        })
+    </script>
+</html>
