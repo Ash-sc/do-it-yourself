@@ -11,7 +11,7 @@
             <p>Name : {{ name }}</p>
             <p>Arr length : {{ from.length }}</p>
             <button v-on:click="changName">change name</button>
-            <button v-on:click="changeCityFrom">change city from</button>
+            <button v-on:click="changeCityFrom">add element</button>
         </div>
     </body>
     <script src="./observer.js"></script>
@@ -31,7 +31,7 @@
                 },
                 changeCityFrom () {
                     this.from.push(Math.random())
-                    // this.from = { city: 'Beijing' }
+                    console.log(this.from.length)
                 }
             }
         })
