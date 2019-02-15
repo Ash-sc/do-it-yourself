@@ -9,7 +9,7 @@
         <div id="app">
             <input type="text" v-model="name">
             <p>Name : {{ name }}</p>
-            <p>From : {{ from.city }}</p>
+            <p>Arr length : {{ from.length }}</p>
             <button v-on:click="changName">change name</button>
             <button v-on:click="changeCityFrom">change city from</button>
         </div>
@@ -23,17 +23,15 @@
             el: '#app',
             data: {
                 name: 'Origin Name',
-                from: {
-                    city: 'Hangzhou'
-                }
+                from: []
             },
             methods: {
                 changName () {
                     this.name = 'New Name'
                 },
                 changeCityFrom () {
-                    // this.from.city = 'Beijing'
-                    this.from = { city: 'Beijing' }
+                    this.from.push(Math.random())
+                    // this.from = { city: 'Beijing' }
                 }
             }
         })
